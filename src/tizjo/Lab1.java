@@ -12,6 +12,11 @@ public class Lab1
 		
 		Scanner scan = new Scanner(System.in);
 		
-		
+		System.out.println("Podaj nazwe pliku");
+		fileName = scan.nextLine();
+		System.out.println("Podaj str1");
+		fileName = scan.nextLine();
+		System.out.println("Podaj str2");
+		fileName = scan.nextLine();
 	}
 }
