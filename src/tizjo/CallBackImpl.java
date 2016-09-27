@@ -18,12 +18,15 @@ public class CallBackImpl implements CallBack
 			{
 				System.out.println("Write a new Path");
 				userInput = scan.nextLine();
-				
+			}
+			else 
+			{
+				System.out.println("nie wybrales opcji zmiany sciezki");
 			}
 		}
 		else if(!wynik)
 		{
-			
+			System.out.println("plik nie zostal zapisany");
 		}
 		
 		return userInput;
