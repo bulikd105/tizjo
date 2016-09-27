@@ -7,8 +7,8 @@ public class Lab1
 	public static void main(String[] args)
 	{
 
-		GetData();
-		
+		String str[] = GetData();
+		SecMet(str);
 		
 	}
 	
@@ -25,7 +25,16 @@ public class Lab1
 		System.out.println("Podaj str2");
 		str[3] = scan.nextLine();
 		
-		
 		return str;
 	}
+	
+	public static void SecMet(String[] str)
+	{
+		
+	}
+	
+	
 }
+
+
+
