@@ -2,5 +2,5 @@ package tizjo;
 
 public interface CallBack 
 {
-	void methodToCallBack(String wynik);
+	void methodToCallBack(boolean wynik);
 }

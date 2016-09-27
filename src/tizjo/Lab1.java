@@ -13,9 +13,9 @@ public class Lab1
 	
 	public static void main(String[] args)
 	{
-
+		CallBackImpl callBack = new CallBackImpl();
 		String str[] = GetData();
-		SecMet(str);
+		SecMet(str, callBack);
 		
 	}
 	
@@ -32,6 +32,12 @@ public class Lab1
 		System.out.println("Podaj str2");
 		str[3] = scan.nextLine();
 	
+		
+		return str;
+	}
+	
+	public static void SecMet(String[] str, CallBackImpl callBack)
+	{
 		try
 		{
 			File filee = new File("dane.txt");
@@ -41,24 +47,16 @@ public class Lab1
 			bw.write(hello);
 			bw.close();
 			
+			System.out.println(str[2]);
 			
 		}
 		catch(IOException e)
 		{
+			System.out.println(str[3]);
 			e.printStackTrace();
-		}
-		
-		
-		return str;
+			
+		}	
 	}
-	
-	public static void SecMet(String[] str)
-	{
-		
-		
-	}
-	
-	
 }
 
 
