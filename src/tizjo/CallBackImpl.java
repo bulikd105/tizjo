@@ -5,30 +5,45 @@ import java.util.Scanner;
 public class CallBackImpl implements CallBack
 {
 	@Override
-	
 	public String methodToCallBack(boolean wynik) 
 	{
 		Scanner scan = new Scanner(System.in);
-		String userInput = "";
+		String option = "";
+		String path = "";
+		boolean flag = true;
 		if(wynik)
 		{
-			System.out.println("wanna change your path Y/N?");
-			userInput = scan.nextLine();
-			if(userInput.equals("Y"))
+			while(flag)
 			{
-				System.out.println("Write a new Path");
-				userInput = scan.nextLine();
-			}
-			else 
-			{
-				System.out.println("nie wybrales opcji zmiany sciezki");
+				System.out.println("Chcesz zmienic sciezkie pliku?\n1 - Tak\n2 - Nie");
+				option = scan.nextLine();
+				switch(option)
+				{
+					case "1" :	System.out.println("Wybrales zmiane sciezki.\nPodaj nowa sciezke:");
+								path = scan.nextLine();
+								if(path.endsWith(".txt"))
+								{
+									System.out.println("Plik zostal zapisany w nowej sciezce: " + path);
+								}
+								else
+								{
+									System.out.println("Plik w podanej sciezce nie ma rozszerzenia txt");
+								}
+								flag = false;
+								break;
+					case "2" :	System.out.println("Wybrales zachowanie aktualniej sciezki. Zegnaj");
+								flag = false;
+								break;
+					default  :  break;
+							
+				}
 			}
 		}
-		else if(!wynik)
+		else
 		{
 			System.out.println("plik nie zostal zapisany");
 		}
 		
-		return userInput;
+		return path;
 	}
 }
