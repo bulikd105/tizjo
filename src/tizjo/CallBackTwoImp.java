@@ -2,23 +2,17 @@ package tizjo;
 
 public class CallBackTwoImp implements CallBackTwo
 {
+	private ResultInfo result;
+	
 	@Override
-	public String[] callBackToMainApp() 
+	public ResultInfo secondCall() 
 	{
-		boolean wynik = false;
-		String[] userData = new String[4];
-			
-		
-		if(wynik)
-		{
-			userData[3] = "1";
-		}
-		else
-		{
-			userData[3] = "0";
-		}
-		
-		
-		return userData;
+		return result;		
+	}
+	
+	public CallBackTwoImp(ResultInfo result) 
+	{
+		super();
+		this.result = result;
 	}
 }
