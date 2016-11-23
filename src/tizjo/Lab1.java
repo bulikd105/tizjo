@@ -43,6 +43,3 @@ public class Lab1 extends Second
 		return userData;
 	}
 }
-
-
-

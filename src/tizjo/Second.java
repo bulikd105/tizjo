@@ -7,10 +7,28 @@ import java.io.IOException;
 
 public abstract class Second 
 {
+	public static boolean flag = false;
+	public static String userInput[] = new String[3];
+	
+	public static boolean isFlag() 
+	{
+		return flag;
+	}
+
+	public static String[] getUserInput() 
+	{
+		return userInput;
+	}
+	
 	public static void SecMet(String[] str, CallBackImpl callBack)
 	{
 		
-		boolean flag = false;
+		for(int i = 0; i < str.length; i++)
+		{
+			userInput[i] = str[i];
+		}
+		
+		//boolean flag = false;
 		String hello = "Hello World!";
 		int iterator = 0;
 		do
@@ -35,6 +53,6 @@ public abstract class Second
 				e.printStackTrace();
 			}		
 		}
-		while(!callBack.methodToCallBack(flag).equals("") && iterator < 1);
+		while(!callBack.methodToCallBack(callBack).equals("") && iterator < 1);
 	}
 }
