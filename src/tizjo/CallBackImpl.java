@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class CallBackImpl implements CallBack
 {
 	@Override
-	public String methodToCallBack(CallBack callBack)
+	public String methodToCallBack(CallBackTwo cBTwo)
 	{
-		String[] str = callBackToMainApp();
+		String[] str = cBTwo.callBackToMainApp();
+		
 		Scanner scan = new Scanner(System.in);
 		
 		String option = "";
@@ -52,25 +53,5 @@ public class CallBackImpl implements CallBack
 		}
 		
 		return path;
-	}
-
-	@Override
-	public String[] callBackToMainApp() 
-	{
-		boolean wynik = false;
-		String[] userData = new String[4];
-			
-		
-		if(wynik)
-		{
-			userData[3] = "1";
-		}
-		else
-		{
-			userData[3] = "0";
-		}
-		
-		
-		return userData;
 	}
 }
