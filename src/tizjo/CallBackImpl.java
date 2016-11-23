@@ -24,17 +24,18 @@ public class CallBackImpl implements CallBack
 								if(path.endsWith(".txt"))
 								{
 									System.out.println("Plik zostal zapisany w nowej sciezce: " + path);
+									flag = false;
 								}
 								else
 								{
 									System.out.println("Plik w podanej sciezce nie ma rozszerzenia txt");
-								}
-								flag = false;
+								}					
 								break;
 					case "2" :	System.out.println("Wybrales zachowanie aktualniej sciezki. Zegnaj");
 								flag = false;
 								break;
-					default  :  break;
+					default  :  flag = false;
+								break;
 							
 				}
 			}
