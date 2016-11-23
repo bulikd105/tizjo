@@ -2,12 +2,12 @@ package tizjo;
 
 import java.util.Scanner;
 
-public class CallBackImpl implements CallBack
+public class CallBackOneImpl implements CallBackOne
 {
 	@Override
-	public String methodToCallBack(CallBackTwo cBTwo)
+	public String firstCall(CallBackTwo cBTwo)
 	{
-		String[] str = cBTwo.callBackToMainApp();
+		ResultInfo rsInfo =  cBTwo.secondCall();
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -16,7 +16,7 @@ public class CallBackImpl implements CallBack
 		
 		boolean flag = true;
 		
-		if(str[4].equals("1"))
+		if(rsInfo.isSuccess())
 		{
 			while(flag)
 			{
@@ -24,9 +24,10 @@ public class CallBackImpl implements CallBack
 				option = scan.nextLine();
 				switch(option)
 				{
-					case "1" :	System.out.println("Wybrales zmiane sciezki.\nPodaj nowa sciezke:");
-								System.out.println("Poprzednie ustawienia:");
-								System.out.println("Sciezka: " + str[0] + "\nNapis poprawny: " + str[1] + "\nNapis niepoprawny: " + str[0]);
+					case "1" :	System.out.println("Wybrales zmiane sciezki.\nPoprzednie ustawienia:");
+								System.out.println("Sciezka: " + rsInfo.getFileName() + "\nNapis poprawny: " + rsInfo.getCorrectMsg() + "\nNapis niepoprawny: " + rsInfo.getIncorrectMsg());
+								
+								System.out.println("Podaj nowa sciezke:");
 								path = scan.nextLine();
 								if(path.endsWith(".txt"))
 								{
@@ -36,14 +37,15 @@ public class CallBackImpl implements CallBack
 								else
 								{
 									System.out.println("Plik w podanej sciezce nie ma rozszerzenia txt");
-								}					
+								}	
 								break;
+								
 					case "2" :	System.out.println("Wybrales zachowanie aktualniej sciezki. Zegnaj");
 								flag = false;
 								break;
+								
 					default  :  flag = false;
 								break;
-							
 				}
 			}
 		}
@@ -51,7 +53,6 @@ public class CallBackImpl implements CallBack
 		{
 			System.out.println("plik nie zostal zapisany");
 		}
-		
 		return path;
 	}
 }
