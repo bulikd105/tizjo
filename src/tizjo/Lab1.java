@@ -6,7 +6,7 @@ public class Lab1 extends Second
 {
 	public static void main(String[] args)
 	{
-		CallBackImpl callBack = new CallBackImpl();
+		CallBackOneImpl callBack = new CallBackOneImpl();
 		String str[] = new String[3];
 		str = GetData();
 		
