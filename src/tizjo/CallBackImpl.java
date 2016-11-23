@@ -9,10 +9,13 @@ public class CallBackImpl implements CallBack
 	{
 		String[] str = callBackToMainApp();
 		Scanner scan = new Scanner(System.in);
+		
 		String option = "";
 		String path = "";
+		
 		boolean flag = true;
-		if(wynik)
+		
+		if(str[4].equals("1"))
 		{
 			while(flag)
 			{
@@ -21,6 +24,8 @@ public class CallBackImpl implements CallBack
 				switch(option)
 				{
 					case "1" :	System.out.println("Wybrales zmiane sciezki.\nPodaj nowa sciezke:");
+								System.out.println("Poprzednie ustawienia:");
+								System.out.println("Sciezka: " + str[0] + "\nNapis poprawny: " + str[1] + "\nNapis niepoprawny: " + str[0]);
 								path = scan.nextLine();
 								if(path.endsWith(".txt"))
 								{
@@ -52,8 +57,18 @@ public class CallBackImpl implements CallBack
 	@Override
 	public String[] callBackToMainApp() 
 	{
-		boolean wynik = false;;
-		String[] userData = new String[3];
+		boolean wynik = false;
+		String[] userData = new String[4];
+			
+		
+		if(wynik)
+		{
+			userData[3] = "1";
+		}
+		else
+		{
+			userData[3] = "0";
+		}
 		
 		
 		return userData;
