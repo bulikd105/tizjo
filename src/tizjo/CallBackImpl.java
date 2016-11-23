@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class CallBackImpl implements CallBack
 {
 	@Override
-	public String methodToCallBack(boolean wynik) 
+	public String methodToCallBack(CallBack callBack)
 	{
+		String[] str = callBackToMainApp();
 		Scanner scan = new Scanner(System.in);
 		String option = "";
 		String path = "";
@@ -46,5 +47,15 @@ public class CallBackImpl implements CallBack
 		}
 		
 		return path;
+	}
+
+	@Override
+	public String[] callBackToMainApp() 
+	{
+		boolean wynik = false;;
+		String[] userData = new String[3];
+		
+		
+		return userData;
 	}
 }

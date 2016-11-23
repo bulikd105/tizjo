@@ -9,6 +9,7 @@ public abstract class Second
 {
 	public static void SecMet(String[] str, CallBackImpl callBack)
 	{
+		
 		boolean flag = false;
 		String hello = "Hello World!";
 		int iterator = 0;
