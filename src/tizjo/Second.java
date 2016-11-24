@@ -40,7 +40,11 @@ public abstract class Second
 			}
 			rsInfo = new ResultInfo(str, flag);
 			callTwo = new CallBackTwoImp(rsInfo);
+			if(iterator == 2)
+			{
+				break;
+			}
 		}
-		while(!callBack.firstCall(callTwo).equals("") && iterator < 1);
+		while(!(str[0] = callBack.firstCall(callTwo)).equals("") && iterator <= 1);
 	}
 }
