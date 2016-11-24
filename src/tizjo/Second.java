@@ -11,6 +11,7 @@ public abstract class Second
 	{
 		boolean flag = false;
 		String hello = "Hello World!";
+
 		int iterator = 0;
 		do
 		{
@@ -33,7 +34,11 @@ public abstract class Second
 				flag = false;
 				e.printStackTrace();
 			}		
+			if(iterator == 2)
+			{
+				break;
+			}
 		}
-		while(!callBack.methodToCallBack(flag).equals("") && iterator < 1);
+		while(!(str[0] = callBack.methodToCallBack(flag)).equals("") && iterator <= 1);
 	}
 }
